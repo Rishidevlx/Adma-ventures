@@ -1,0 +1,6 @@
+{
+  "name": "ADMA Ventures Academy",
+  "description": "ADMA Ventures official upskilling, reskilling, and education landing page, showing key courses, partners, enrollment form, and testimonials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
