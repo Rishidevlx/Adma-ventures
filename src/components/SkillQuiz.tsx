@@ -34,7 +34,7 @@ export default function SkillQuiz() {
       const apiKey = (import.meta as any).env.VITE_GEMINI_API_KEY;
       
       if (!apiKey) {
-        throw new Error("API Key is missing. Please add VITE_GEMINI_API_KEY to your .env file or Vercel environment variables.");
+        throw new Error("Our AI is currently over loaded. Please try again later.");
       }
 
       const ai = new GoogleGenAI({ apiKey: apiKey });
