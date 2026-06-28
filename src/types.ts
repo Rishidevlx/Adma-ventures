@@ -13,8 +13,8 @@ export interface Course {
   id: string;
   title: string;
   duration: string;
-  format: '100% Online' | 'Hybrid' | 'Immersive Bootcamp';
-  level: 'Beginner Friendly' | 'Intermediate' | 'Advanced Leader';
+  format: '100% Online' | 'Hybrid' | 'Immersive Bootcamp' | 'Online/Hybrid';
+  level: 'Beginner Friendly' | 'Intermediate' | 'Advanced Leader' | 'Offered by Crio' | 'Top Courses';
   partnerId: string; // references Partner
   tags: string[];
   description: string;

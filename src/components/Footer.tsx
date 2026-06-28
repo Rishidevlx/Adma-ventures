@@ -100,7 +100,8 @@ export default function Footer() {
         {/* Footer Meta Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono text-slate-550">
           <div>
-            <span>© 2026 ADMA Ventures Inc. All academic curricula are co-branded by and property of their respective partner universities.</span>
+            <span className="block mb-1">© 2026 ADMA Ventures Inc. All academic curricula are co-branded by and property of their respective partner universities.</span>
+            <span>Developed By <a href="https://lykspire.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 hover:underline transition-all font-bold">lykspire</a></span>
           </div>
           <div className="flex items-center gap-1 shrink-0">
             <span>Engineering Education Standards</span>

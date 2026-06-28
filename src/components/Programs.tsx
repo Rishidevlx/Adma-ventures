@@ -9,8 +9,8 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function Programs() {
-  const [expandedProgram, setExpandedProgram] = useState<string | null>('ai-intel');
-  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
+  const [expandedProgram, setExpandedProgram] = useState<string | null>('top-courses-track');
+  const [selectedLevel, setSelectedLevel] = useState<string | null>('Top Courses');
 
   const getPartnerName = (partnerId: string) => {
     return partners.find(p => p.id === partnerId)?.name || 'Academic Partner';
@@ -41,34 +41,24 @@ export default function Programs() {
           {/* Level Filter Controls */}
           <div className="flex flex-wrap gap-2 shrink-0">
             <button
-              onClick={() => setSelectedLevel(null)}
+              onClick={() => setSelectedLevel('Offered by Crio')}
               className={`px-4 py-2 rounded-none text-xs font-mono font-black uppercase tracking-wider transition-colors cursor-pointer border-2 ${
-                selectedLevel === null
+                selectedLevel === 'Offered by Crio' || selectedLevel === null
                   ? 'bg-cyan-400 border-cyan-400 text-slate-950'
                   : 'bg-slate-950 text-slate-400 hover:text-white border-slate-850'
               }`}
             >
-              All Levels
+              Offered by Crio
             </button>
             <button
-              onClick={() => setSelectedLevel('Beginner Friendly')}
+              onClick={() => setSelectedLevel('Top Courses')}
               className={`px-4 py-2 rounded-none text-xs font-mono font-black uppercase tracking-wider transition-colors cursor-pointer border-2 ${
-                selectedLevel === 'Beginner Friendly'
+                selectedLevel === 'Top Courses'
                   ? 'bg-cyan-400 border-cyan-400 text-slate-950'
                   : 'bg-slate-950 text-slate-400 hover:text-white border-slate-850'
               }`}
             >
-              Reskilling (Beginner)
-            </button>
-            <button
-              onClick={() => setSelectedLevel('Intermediate')}
-              className={`px-4 py-2 rounded-none text-xs font-mono font-black uppercase tracking-wider transition-colors cursor-pointer border-2 ${
-                selectedLevel === 'Intermediate'
-                  ? 'bg-cyan-400 border-cyan-400 text-slate-950'
-                  : 'bg-slate-950 text-slate-400 hover:text-white border-slate-850'
-              }`}
-            >
-              Upskilling (Intermediate)
+              Top courses
             </button>
           </div>
         </div>

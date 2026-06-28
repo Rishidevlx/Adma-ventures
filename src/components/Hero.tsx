@@ -113,7 +113,7 @@ export default function Hero() {
 
               <div>
                 <span className="block text-cyan-400 font-mono text-xs mb-1.5 uppercase tracking-widest font-black">Network Horizon</span>
-                <span className="text-3xl font-display font-black text-white uppercase tracking-tighter">14k Graduates</span>
+                <span className="text-3xl font-display font-black text-white uppercase tracking-tighter">5k Graduates</span>
                 <p className="text-slate-400 text-sm mt-2 leading-relaxed font-light">
                   Direct connection loops to high-paying venture jobs in engineering, AI orchestrations, and cloud architecture.
                 </p>

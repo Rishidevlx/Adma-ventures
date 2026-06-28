@@ -14,6 +14,7 @@ import Testimonials from './components/Testimonials';
 import ApplicationForm from './components/ApplicationForm';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import PlacementPartners from './components/PlacementPartners';
 
 export default function App() {
   return (
@@ -25,6 +26,9 @@ export default function App() {
       <main>
         {/* Dynamic Editorial Hero section with core metrics */}
         <Hero />
+
+        {/* Placement Partners Marquee */}
+        <PlacementPartners variant="marquee" />
 
         {/* Co-operative ecosystem & certified list targets */}
         <Partners />
@@ -40,6 +44,9 @@ export default function App() {
 
         {/* Accordion FAQ insights */}
         <FAQ />
+        
+        {/* Placement Partners List View */}
+        <PlacementPartners variant="list" />
 
         {/* Registration Contact dossier form */}
         <ApplicationForm />

@@ -2,26 +2,6 @@ import { Partner, Program, Testimonial, FAQItem } from './types';
 
 export const partners: Partner[] = [
   {
-    id: 'mti',
-    name: 'Munich Technical Institute',
-    type: 'University',
-    logoText: 'MTI',
-    logoIcon: 'GraduationCap',
-    country: 'Germany',
-    website: '#',
-    description: 'Bavaria’s premier technical research hub, co-designing the systems and algorithms fueling advanced European manufacturing.'
-  },
-  {
-    id: 'susv',
-    name: 'Stanford Horizon Collaborations',
-    type: 'University',
-    logoText: 'SHC',
-    logoIcon: 'BookOpen',
-    country: 'United States',
-    website: '#',
-    description: 'Providing frameworks for corporate venture building, Silicon Valley innovation, and agile organizational strategies.'
-  },
-  {
     id: 'gcerts',
     name: 'Google Career Certifications',
     type: 'Industry Tech',
@@ -40,113 +20,126 @@ export const partners: Partner[] = [
     country: 'Global',
     website: '#',
     description: 'Enabling highly scalably engineered distributed structures and hands-on cloud sandboxes for enterprise-scale ops.'
-  },
-  {
-    id: 'aether',
-    name: 'Aether Cognitive Systems',
-    type: 'Research Lab',
-    logoText: 'ÆTHER',
-    logoIcon: 'Cpu',
-    country: 'Switzerland',
-    website: '#',
-    description: 'A leading deep-tech intelligence lab contributing frameworks for high-trust language model architectures.'
   }
 ];
 
 export const programs: Program[] = [
   {
-    id: 'ai-intel',
-    title: 'AI & Cognitive Engineering',
-    subtitle: 'Advanced Enterprise Automation Track',
-    description: 'Master practical implementation of agentic AI workflows, retrieval-augmented generation (RAG), and customized corporate models.',
-    iconName: 'Cpu',
-    salaryIncreaseEstimate: '38%',
-    courses: [
-      {
-        id: 'ai-101',
-        title: 'Generative AI Systems Architect',
-        duration: '10 Weeks',
-        format: 'Hybrid',
-        level: 'Intermediate',
-        partnerId: 'aether',
-        tags: ['AI Agentic', 'RAG Frameworks', 'LLMOps'],
-        description: 'Design robust pipeline patterns that couple state-of-the-art foundation models with enterprise knowledge bases while managing bias and hallucination vectors.',
-        skillsAcquired: ['Vector Databases', 'LangChain Patterns', 'Semantic Search Tuning']
-      },
-      {
-        id: 'ai-102',
-        title: 'Next-Gen Cognitive Orchestration',
-        duration: '6 Weeks',
-        format: '100% Online',
-        level: 'Advanced Leader',
-        partnerId: 'susv',
-        tags: ['Venture Cap', 'Systemic Shift', 'Ethical Governance'],
-        description: 'Formulate an actionable enterprise-wide artificial intelligence roadmap, calculating return-of-investment ratios and addressing complex compliance thresholds.',
-        skillsAcquired: ['Ethical Auditing', 'AI Venture Modeling', 'Change Integration']
-      }
-    ]
-  },
-  {
-    id: 'cloud-cyber',
-    title: 'Cloud Defenses & Full-Stack Systems',
-    subtitle: 'High-Demand Technical Reskilling',
-    description: 'A comprehensive path engineered to transform individuals with non-technical foundations into confident, job-ready cloud operations professionals.',
-    iconName: 'Shield',
-    salaryIncreaseEstimate: '52%',
-    courses: [
-      {
-        id: 'sec-101',
-        title: 'Full-Stack Modern Architecture',
-        duration: '16 Weeks',
-        format: 'Immersive Bootcamp',
-        level: 'Beginner Friendly',
-        partnerId: 'aws',
-        tags: ['TypeScript', 'Cloud Database', 'API Orchestration'],
-        description: 'Gain robust, certified skills building modern applications from scratch. Covers stateful frontends, modular database modeling, and scalable container hosting models.',
-        skillsAcquired: ['React & Node', 'NoSQL Datastores', 'Docker Containers']
-      },
-      {
-        id: 'sec-102',
-        title: 'Zero-Trust Security Systems & Cloud Ops',
-        duration: '12 Weeks',
-        format: 'Hybrid',
-        level: 'Intermediate',
-        partnerId: 'mti',
-        tags: ['IAM Controls', 'Security Audits', 'Vulnerability Scan'],
-        description: 'Understand operational security models, penetration scanning techniques, server safety paradigms, and how to harden cloud infrastructures against active threat vectors.',
-        skillsAcquired: ['Network Security', 'IAM Role Engineering', 'Continuous Deployment Security']
-      }
-    ]
-  },
-  {
-    id: 'digital-transform',
-    title: 'Digital Business Transformation',
-    subtitle: 'Strategic Corporate Leadership Track',
-    description: 'Equip senior personnel, operations leaders, and startup entrepreneurs with adaptive strategy instruments to drive modern high-velocity growth.',
+    id: 'finance-crio',
+    title: 'Finance & Accounting',
+    subtitle: 'Offered by Crio',
+    description: 'Build expertise in financial management, strategic planning, taxation, and business decision-making with these globally recognized certifications.',
     iconName: 'TrendingUp',
-    salaryIncreaseEstimate: '29%',
+    salaryIncreaseEstimate: '45%',
     courses: [
       {
-        id: 'biz-101',
-        title: 'Interactive Analytics & Business Intelligence',
-        duration: '8 Weeks',
-        format: '100% Online',
-        level: 'Beginner Friendly',
-        partnerId: 'gcerts',
-        tags: ['Data Viz', 'Executive Reporting', 'Product Analytics'],
-        description: 'Harness the power of cloud data sets, designing responsive business dynamic control centers and reading critical metric clusters to guide product iterations.',
-        skillsAcquired: ['SQL Foundation', 'Data Dashboarding', 'A/B Test Design']
+        id: 'us-cpa',
+        title: 'US CPA (Certified Public Accountant)',
+        duration: '12 Months',
+        format: 'Online/Hybrid',
+        level: 'Offered by Crio',
+        partnerId: 'aws', 
+        tags: ['US CPA Course', 'CPA Certification', 'US Accounting Course'],
+        description: 'Become a globally recognized accounting professional. Learn accounting, auditing, taxation, financial reporting, and business regulations. This certification opens career opportunities in Big 4 firms, MNCs, consulting companies, and global finance organizations.',
+        skillsAcquired: ['Accounting', 'Auditing', 'Taxation', 'Financial Reporting']
       },
       {
-        id: 'biz-102',
-        title: 'Modern Product Management & Agility',
-        duration: '10 Weeks',
-        format: 'Hybrid',
-        level: 'Intermediate',
-        partnerId: 'susv',
-        tags: ['Agile Execution', 'Scrum Orchestration', 'Lean Product'],
-        description: 'Refine collaborative leadership structures, steering products from bare inception models to high-scale releases with rapid cycle feedback methodologies.',
-        skillsAcquired: ['Figma to Spec Frameworks', 'Agile Roadmap Planning', 'Stakeholder Alignment']
+        id: 'us-cma',
+        title: 'US CMA (Certified Management Accountant)',
+        duration: '6-9 Months',
+        format: 'Online/Hybrid',
+        level: 'Offered by Crio',
+        partnerId: 'aws',
+        tags: ['US CMA Course', 'CMA USA Certification', 'Management Accounting'],
+        description: 'The US CMA Course helps you build expertise in financial management, strategic planning, budgeting, performance management, and business decision-making. It is ideal for students and professionals looking for high-paying finance and management careers.',
+        skillsAcquired: ['Financial Management', 'Strategic Planning', 'Budgeting']
+      },
+      {
+        id: 'us-ea',
+        title: 'US Enrolled Agent (EA)',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Offered by Crio',
+        partnerId: 'aws',
+        tags: ['Enrolled Agent Course', 'US Taxation', 'IRS EA Certification'],
+        description: 'The US Enrolled Agent (EA) Course is a professional certification in US taxation authorized by the IRS. Learn tax preparation, tax planning, tax compliance, and representation of taxpayers. It is perfect for those seeking careers in international taxation and tax consulting.',
+        skillsAcquired: ['Tax Preparation', 'Tax Planning', 'Tax Compliance']
+      }
+    ]
+  },
+  {
+    id: 'top-courses-track',
+    title: 'Advanced Tech & Digital Tracks',
+    subtitle: 'Top Courses',
+    description: 'Master highly demanded tech skills, from cloud infrastructure and full-stack development to AI & Machine Learning. Prepare for the future of work with comprehensive, industry-relevant curriculum.',
+    iconName: 'Cpu',
+    salaryIncreaseEstimate: '50%',
+    courses: [
+      {
+        id: 'full-stack-web',
+        title: 'Full Stack Web Development',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Top Courses',
+        partnerId: 'aws',
+        tags: ['Web Dev', 'React', 'Node.js', 'Full Stack'],
+        description: 'Build complete web applications from scratch. Master front-end technologies like React, HTML/CSS, and back-end architectures with Node.js and databases to become a complete software engineer.',
+        skillsAcquired: ['React', 'Node.js', 'Databases', 'API Design']
+      },
+      {
+        id: 'digital-marketing',
+        title: 'Digital Marketing Certification',
+        duration: '4 Months',
+        format: 'Online/Hybrid',
+        level: 'Top Courses',
+        partnerId: 'gcerts',
+        tags: ['SEO', 'Content Marketing', 'Analytics'],
+        description: 'Learn to drive growth and user acquisition. Master SEO, social media marketing, paid advertising, and marketing analytics to build comprehensive digital marketing campaigns.',
+        skillsAcquired: ['SEO', 'Google Ads', 'Social Media Marketing', 'Analytics']
+      },
+      {
+        id: 'data-analytics',
+        title: 'Data Analytics & Visualization',
+        duration: '5 Months',
+        format: 'Online/Hybrid',
+        level: 'Top Courses',
+        partnerId: 'gcerts',
+        tags: ['Data Science', 'Tableau', 'SQL'],
+        description: 'Transform raw data into actionable business insights. Learn SQL, Python for data analysis, and advanced visualization tools like Tableau and PowerBI.',
+        skillsAcquired: ['SQL', 'Python', 'Data Visualization', 'Statistical Analysis']
+      },
+      {
+        id: 'cybersecurity',
+        title: 'Cybersecurity Certification',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Top Courses',
+        partnerId: 'aws',
+        tags: ['Network Security', 'Ethical Hacking', 'InfoSec'],
+        description: 'Protect organizations from digital threats. Master network security, ethical hacking, incident response, and risk management to become a certified cybersecurity professional.',
+        skillsAcquired: ['Network Defense', 'Penetration Testing', 'Risk Management']
+      },
+      {
+        id: 'cloud-computing',
+        title: 'Cloud Computing (AWS, Azure, Google Cloud)',
+        duration: '5 Months',
+        format: 'Online/Hybrid',
+        level: 'Top Courses',
+        partnerId: 'aws',
+        tags: ['AWS', 'Azure', 'GCP', 'DevOps'],
+        description: 'Design, deploy, and manage scalable cloud architectures. Get hands-on experience with the top three cloud providers: AWS, Microsoft Azure, and Google Cloud Platform.',
+        skillsAcquired: ['Cloud Architecture', 'AWS/Azure/GCP', 'Infrastructure as Code']
+      },
+      {
+        id: 'ai-ml',
+        title: 'Artificial Intelligence & Machine Learning Certification',
+        duration: '8 Months',
+        format: 'Online/Hybrid',
+        level: 'Top Courses',
+        partnerId: 'aws',
+        tags: ['AI', 'Machine Learning', 'Deep Learning'],
+        description: 'Build intelligent systems and predictive models. Dive deep into machine learning algorithms, neural networks, natural language processing, and advanced AI frameworks.',
+        skillsAcquired: ['Machine Learning', 'Deep Learning', 'NLP', 'Python']
       }
     ]
   }

@@ -22,7 +22,7 @@ export default function Partners() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 bg-cyan-400/10 px-3.5 py-1.5 rounded-none border-2 border-cyan-400/30">
-            Our Cooperative Ecosystem
+            Our Academic Partners
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-black uppercase tracking-tighter text-white mt-6">
             Elite Academic Partners
