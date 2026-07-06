@@ -25,54 +25,11 @@ export const partners: Partner[] = [
 
 export const programs: Program[] = [
   {
-    id: 'finance-crio',
-    title: 'Finance & Accounting',
-    subtitle: 'Offered by Crio',
-    description: 'Build expertise in financial management, strategic planning, taxation, and business decision-making with these globally recognized certifications.',
+    id: 'top-courses',
+    title: 'Top Courses',
+    subtitle: 'Industry Leading Programs',
+    description: 'Our most popular and highly demanded courses across all our partners. Master tech, finance, and digital skills to prepare for the future of work.',
     iconName: 'TrendingUp',
-    salaryIncreaseEstimate: '45%',
-    courses: [
-      {
-        id: 'us-cpa',
-        title: 'US CPA (Certified Public Accountant)',
-        duration: '12 Months',
-        format: 'Online/Hybrid',
-        level: 'Offered by Crio',
-        partnerId: 'aws', 
-        tags: ['US CPA Course', 'CPA Certification', 'US Accounting Course'],
-        description: 'Become a globally recognized accounting professional. Learn accounting, auditing, taxation, financial reporting, and business regulations. This certification opens career opportunities in Big 4 firms, MNCs, consulting companies, and global finance organizations.',
-        skillsAcquired: ['Accounting', 'Auditing', 'Taxation', 'Financial Reporting']
-      },
-      {
-        id: 'us-cma',
-        title: 'US CMA (Certified Management Accountant)',
-        duration: '6-9 Months',
-        format: 'Online/Hybrid',
-        level: 'Offered by Crio',
-        partnerId: 'aws',
-        tags: ['US CMA Course', 'CMA USA Certification', 'Management Accounting'],
-        description: 'The US CMA Course helps you build expertise in financial management, strategic planning, budgeting, performance management, and business decision-making. It is ideal for students and professionals looking for high-paying finance and management careers.',
-        skillsAcquired: ['Financial Management', 'Strategic Planning', 'Budgeting']
-      },
-      {
-        id: 'us-ea',
-        title: 'US Enrolled Agent (EA)',
-        duration: '6 Months',
-        format: 'Online/Hybrid',
-        level: 'Offered by Crio',
-        partnerId: 'aws',
-        tags: ['Enrolled Agent Course', 'US Taxation', 'IRS EA Certification'],
-        description: 'The US Enrolled Agent (EA) Course is a professional certification in US taxation authorized by the IRS. Learn tax preparation, tax planning, tax compliance, and representation of taxpayers. It is perfect for those seeking careers in international taxation and tax consulting.',
-        skillsAcquired: ['Tax Preparation', 'Tax Planning', 'Tax Compliance']
-      }
-    ]
-  },
-  {
-    id: 'top-courses-track',
-    title: 'Advanced Tech & Digital Tracks',
-    subtitle: 'Top Courses',
-    description: 'Master highly demanded tech skills, from cloud infrastructure and full-stack development to AI & Machine Learning. Prepare for the future of work with comprehensive, industry-relevant curriculum.',
-    iconName: 'Cpu',
     salaryIncreaseEstimate: '50%',
     courses: [
       {
@@ -80,66 +37,392 @@ export const programs: Program[] = [
         title: 'Full Stack Web Development',
         duration: '6 Months',
         format: 'Online/Hybrid',
-        level: 'Top Courses',
+        level: 'Skilledura',
         partnerId: 'aws',
         tags: ['Web Dev', 'React', 'Node.js', 'Full Stack'],
-        description: 'Build complete web applications from scratch. Master front-end technologies like React, HTML/CSS, and back-end architectures with Node.js and databases to become a complete software engineer.',
+        description: 'Build complete web applications from scratch. Master front-end technologies like React, HTML/CSS, and back-end architectures with Node.js.',
         skillsAcquired: ['React', 'Node.js', 'Databases', 'API Design']
       },
       {
-        id: 'digital-marketing',
-        title: 'Digital Marketing Certification',
-        duration: '4 Months',
+        id: 'us-cpa',
+        title: 'US CPA (Certified Public Accountant)',
+        duration: '12 Months',
         format: 'Online/Hybrid',
-        level: 'Top Courses',
-        partnerId: 'gcerts',
-        tags: ['SEO', 'Content Marketing', 'Analytics'],
-        description: 'Learn to drive growth and user acquisition. Master SEO, social media marketing, paid advertising, and marketing analytics to build comprehensive digital marketing campaigns.',
-        skillsAcquired: ['SEO', 'Google Ads', 'Social Media Marketing', 'Analytics']
+        level: 'Kcglobed',
+        partnerId: 'aws', 
+        tags: ['US CPA Course', 'CPA Certification', 'US Accounting'],
+        description: 'Become a globally recognized accounting professional. Learn accounting, auditing, taxation, financial reporting, and business regulations.',
+        skillsAcquired: ['Accounting', 'Auditing', 'Taxation', 'Reporting']
       },
       {
-        id: 'data-analytics',
-        title: 'Data Analytics & Visualization',
-        duration: '5 Months',
+        id: 'crio-fellow-sde',
+        title: 'Fellowship Program in Software Development with AI',
+        duration: '9 Months',
         format: 'Online/Hybrid',
-        level: 'Top Courses',
-        partnerId: 'gcerts',
-        tags: ['Data Science', 'Tableau', 'SQL'],
-        description: 'Transform raw data into actionable business insights. Learn SQL, Python for data analysis, and advanced visualization tools like Tableau and PowerBI.',
-        skillsAcquired: ['SQL', 'Python', 'Data Visualization', 'Statistical Analysis']
-      },
-      {
-        id: 'cybersecurity',
-        title: 'Cybersecurity Certification',
-        duration: '6 Months',
-        format: 'Online/Hybrid',
-        level: 'Top Courses',
+        level: 'Crio',
         partnerId: 'aws',
-        tags: ['Network Security', 'Ethical Hacking', 'InfoSec'],
-        description: 'Protect organizations from digital threats. Master network security, ethical hacking, incident response, and risk management to become a certified cybersecurity professional.',
-        skillsAcquired: ['Network Defense', 'Penetration Testing', 'Risk Management']
-      },
-      {
-        id: 'cloud-computing',
-        title: 'Cloud Computing (AWS, Azure, Google Cloud)',
-        duration: '5 Months',
-        format: 'Online/Hybrid',
-        level: 'Top Courses',
-        partnerId: 'aws',
-        tags: ['AWS', 'Azure', 'GCP', 'DevOps'],
-        description: 'Design, deploy, and manage scalable cloud architectures. Get hands-on experience with the top three cloud providers: AWS, Microsoft Azure, and Google Cloud Platform.',
-        skillsAcquired: ['Cloud Architecture', 'AWS/Azure/GCP', 'Infrastructure as Code']
+        tags: ['Software Dev', 'AI', 'Fellowship'],
+        description: 'A comprehensive fellowship program to master software development integrated with AI tools and techniques.',
+        skillsAcquired: ['Software Engineering', 'AI Integration', 'System Design']
       },
       {
         id: 'ai-ml',
         title: 'Artificial Intelligence & Machine Learning Certification',
         duration: '8 Months',
         format: 'Online/Hybrid',
-        level: 'Top Courses',
+        level: 'Skilledura',
         partnerId: 'aws',
         tags: ['AI', 'Machine Learning', 'Deep Learning'],
-        description: 'Build intelligent systems and predictive models. Dive deep into machine learning algorithms, neural networks, natural language processing, and advanced AI frameworks.',
+        description: 'Build intelligent systems and predictive models. Dive deep into machine learning algorithms, neural networks, and NLP.',
         skillsAcquired: ['Machine Learning', 'Deep Learning', 'NLP', 'Python']
+      },
+      {
+        id: 'cloud-computing',
+        title: 'Cloud Computing (AWS, Azure, Google Cloud)',
+        duration: '5 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'aws',
+        tags: ['AWS', 'Azure', 'GCP', 'DevOps'],
+        description: 'Design, deploy, and manage scalable cloud architectures. Get hands-on experience with AWS, Azure, and Google Cloud.',
+        skillsAcquired: ['Cloud Architecture', 'AWS/Azure/GCP', 'Infrastructure']
+      },
+      {
+        id: 'us-cma',
+        title: 'US CMA (Certified Management Accountant)',
+        duration: '6-9 Months',
+        format: 'Online/Hybrid',
+        level: 'Kcglobed',
+        partnerId: 'aws',
+        tags: ['US CMA', 'Management Accounting', 'Finance'],
+        description: 'Build expertise in financial management, strategic planning, budgeting, performance management, and business decision-making.',
+        skillsAcquired: ['Financial Management', 'Strategic Planning', 'Budgeting']
+      },
+      {
+        id: 'crio-fellow-data',
+        title: 'Fellowship Program in NextGen Data Analytics & Data Science with AI',
+        duration: '8 Months',
+        format: 'Online/Hybrid',
+        level: 'Crio',
+        partnerId: 'aws',
+        tags: ['Data Science', 'Data Analytics', 'AI'],
+        description: 'Master next-generation data science and analytics with cutting-edge AI technologies and real-world projects.',
+        skillsAcquired: ['Data Analytics', 'Data Science', 'AI', 'Python']
+      },
+      {
+        id: 'cybersecurity',
+        title: 'Cybersecurity Certification',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'aws',
+        tags: ['Network Security', 'Ethical Hacking', 'InfoSec'],
+        description: 'Protect organizations from digital threats. Master network security, ethical hacking, incident response, and risk management.',
+        skillsAcquired: ['Network Defense', 'Penetration Testing', 'Risk Management']
+      }
+    ]
+  },
+  {
+    id: 'crio-courses',
+    title: 'Offered by Crio',
+    subtitle: 'Advanced Tech Fellowships',
+    description: 'Transformative software development, QA, and data science programs engineered to make you a top-tier tech professional.',
+    iconName: 'Cpu',
+    salaryIncreaseEstimate: '55%',
+    courses: [
+      {
+        id: 'crio-1',
+        title: 'Fellowship Program in Software Development with AI',
+        duration: '9 Months',
+        format: 'Online',
+        level: 'Crio',
+        partnerId: 'aws',
+        tags: ['SDE', 'AI', 'Fellowship'],
+        description: 'Master software engineering principles while leveraging AI for enhanced development workflows and complex problem-solving.',
+        skillsAcquired: ['Backend Dev', 'System Architecture', 'AI Workflows']
+      },
+      {
+        id: 'crio-2',
+        title: 'Fellowship Program in QA Automation with AI (SDET)',
+        duration: '6 Months',
+        format: 'Online',
+        level: 'Crio',
+        partnerId: 'aws',
+        tags: ['QA', 'Automation', 'SDET'],
+        description: 'Become a highly skilled Software Development Engineer in Test (SDET) with advanced AI automation techniques.',
+        skillsAcquired: ['Test Automation', 'Selenium', 'AI Testing']
+      },
+      {
+        id: 'crio-3',
+        title: 'Fellowship Program in NextGen Data Analytics & Data Science with AI',
+        duration: '8 Months',
+        format: 'Online',
+        level: 'Crio',
+        partnerId: 'gcerts',
+        tags: ['Data Analytics', 'Data Science', 'AI'],
+        description: 'Comprehensive training in modern data processing, predictive modeling, and analytics using AI.',
+        skillsAcquired: ['Data Modeling', 'Machine Learning', 'Python']
+      },
+      {
+        id: 'crio-4',
+        title: 'Fellowship Program in System Design',
+        duration: '4 Months',
+        format: 'Online',
+        level: 'Crio',
+        partnerId: 'aws',
+        tags: ['System Design', 'Architecture'],
+        description: 'Learn to design highly scalable, reliable, and performant software systems for millions of users.',
+        skillsAcquired: ['Scalability', 'Microservices', 'Distributed Systems']
+      },
+      {
+        id: 'crio-5',
+        title: 'SkillIQ Full Stack Development Program',
+        duration: '6 Months',
+        format: 'Online',
+        level: 'Crio',
+        partnerId: 'aws',
+        tags: ['Full Stack', 'Web', 'SkillIQ'],
+        description: 'An intensive Full Stack Web Development program focusing on MERN stack and industry best practices.',
+        skillsAcquired: ['MongoDB', 'Express', 'React', 'Node.js']
+      },
+      {
+        id: 'crio-6',
+        title: 'SkillIQ Data Analytics & Data Science Program',
+        duration: '6 Months',
+        format: 'Online',
+        level: 'Crio',
+        partnerId: 'gcerts',
+        tags: ['Data Science', 'Analytics', 'SkillIQ'],
+        description: 'Kickstart your career in data with rigorous hands-on practice in SQL, Python, and data visualization tools.',
+        skillsAcquired: ['SQL', 'Data Viz', 'Statistical Analysis']
+      },
+      {
+        id: 'crio-7',
+        title: 'Crio SkillIQ Gen-AI Powered QA Automation Program',
+        duration: '5 Months',
+        format: 'Online',
+        level: 'Crio',
+        partnerId: 'aws',
+        tags: ['Gen-AI', 'QA Automation', 'SkillIQ'],
+        description: 'Leverage Generative AI to automate QA processes, create test scripts, and maintain high software quality.',
+        skillsAcquired: ['Gen-AI', 'QA', 'Automated Testing']
+      }
+    ]
+  },
+  {
+    id: 'kcglobed-courses',
+    title: 'Offered by Kcglobed',
+    subtitle: 'Finance & Accounting Certifications',
+    description: 'Globally recognized credentials in accounting and finance to accelerate your career in top financial organizations.',
+    iconName: 'Layers',
+    salaryIncreaseEstimate: '45%',
+    courses: [
+      {
+        id: 'kcg-1',
+        title: 'US CPA (Certified Public Accountant)',
+        duration: '12 Months',
+        format: 'Online/Hybrid',
+        level: 'Kcglobed',
+        partnerId: 'aws', 
+        tags: ['CPA', 'Accounting', 'Taxation'],
+        description: 'Become a globally recognized accounting professional. Learn accounting, auditing, taxation, financial reporting, and business regulations.',
+        skillsAcquired: ['Accounting', 'Auditing', 'Taxation', 'Reporting']
+      },
+      {
+        id: 'kcg-2',
+        title: 'US CMA (Certified Management Accountant)',
+        duration: '6-9 Months',
+        format: 'Online/Hybrid',
+        level: 'Kcglobed',
+        partnerId: 'aws',
+        tags: ['CMA', 'Management', 'Finance'],
+        description: 'Build expertise in financial management, strategic planning, budgeting, performance management, and business decision-making.',
+        skillsAcquired: ['Financial Management', 'Strategic Planning', 'Budgeting']
+      },
+      {
+        id: 'kcg-3',
+        title: 'US Enrolled Agent (EA)',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Kcglobed',
+        partnerId: 'aws',
+        tags: ['Enrolled Agent', 'Taxation', 'IRS'],
+        description: 'A professional certification in US taxation authorized by the IRS. Learn tax preparation, planning, and compliance.',
+        skillsAcquired: ['Tax Preparation', 'Tax Planning', 'Tax Compliance']
+      }
+    ]
+  },
+  {
+    id: 'skilledura-courses',
+    title: 'Offered by Skilledura',
+    subtitle: 'Digital Mastery Programs',
+    description: 'Future-proof your career with comprehensive courses spanning web development, cybersecurity, cloud, and digital marketing.',
+    iconName: 'Shield',
+    salaryIncreaseEstimate: '50%',
+    courses: [
+      {
+        id: 'skill-1',
+        title: 'Full Stack Web Development',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'aws',
+        tags: ['Web Dev', 'React', 'Node.js', 'Full Stack'],
+        description: 'Build complete web applications from scratch. Master front-end technologies like React, HTML/CSS, and back-end architectures with Node.js.',
+        skillsAcquired: ['React', 'Node.js', 'Databases', 'API Design']
+      },
+      {
+        id: 'skill-2',
+        title: 'Digital Marketing Certification',
+        duration: '4 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'gcerts',
+        tags: ['SEO', 'Marketing', 'Analytics'],
+        description: 'Learn to drive growth and user acquisition. Master SEO, social media marketing, paid advertising, and marketing analytics.',
+        skillsAcquired: ['SEO', 'Google Ads', 'Social Media', 'Analytics']
+      },
+      {
+        id: 'skill-3',
+        title: 'Data Analytics & Visualization',
+        duration: '5 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'gcerts',
+        tags: ['Data Science', 'Tableau', 'SQL'],
+        description: 'Transform raw data into actionable business insights. Learn SQL, Python for data analysis, and advanced visualization tools.',
+        skillsAcquired: ['SQL', 'Python', 'Data Viz', 'Statistical Analysis']
+      },
+      {
+        id: 'skill-4',
+        title: 'Cybersecurity Certification',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'aws',
+        tags: ['Network Security', 'Hacking', 'InfoSec'],
+        description: 'Protect organizations from digital threats. Master network security, ethical hacking, incident response, and risk management.',
+        skillsAcquired: ['Network Defense', 'Penetration Testing', 'Risk Management']
+      },
+      {
+        id: 'skill-5',
+        title: 'Cloud Computing (AWS, Azure, Google Cloud)',
+        duration: '5 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'aws',
+        tags: ['AWS', 'Azure', 'GCP', 'Cloud'],
+        description: 'Design, deploy, and manage scalable cloud architectures. Get hands-on experience with the top three cloud providers.',
+        skillsAcquired: ['Cloud Architecture', 'AWS/Azure/GCP', 'Infrastructure']
+      },
+      {
+        id: 'skill-6',
+        title: 'Artificial Intelligence & Machine Learning Certification',
+        duration: '8 Months',
+        format: 'Online/Hybrid',
+        level: 'Skilledura',
+        partnerId: 'aws',
+        tags: ['AI', 'Machine Learning', 'Deep Learning'],
+        description: 'Build intelligent systems and predictive models. Dive deep into machine learning algorithms, neural networks, and advanced AI frameworks.',
+        skillsAcquired: ['Machine Learning', 'Deep Learning', 'NLP', 'Python']
+      }
+    ]
+  },
+  {
+    id: 'skill-lync-courses',
+    title: 'Offered by Skill-lync',
+    subtitle: 'Core Engineering Programs',
+    description: 'Specialized programs focusing on core engineering disciplines including mechanical, electrical, aerospace, and software.',
+    iconName: 'Cpu',
+    salaryIncreaseEstimate: '50%',
+    courses: [
+      {
+        id: 'sl-1',
+        title: 'Mechanical Engineering',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['Mechanical', 'Design'],
+        description: 'Advanced mechanical engineering concepts and practical applications.',
+        skillsAcquired: ['Mechanical Design', 'CAD']
+      },
+      {
+        id: 'sl-2',
+        title: 'Electrical / EV Engineering',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['EV', 'Electrical'],
+        description: 'Deep dive into electric vehicles and electrical engineering systems.',
+        skillsAcquired: ['EV Architecture', 'Power Electronics']
+      },
+      {
+        id: 'sl-3',
+        title: 'Embedded Systems',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['Embedded', 'IoT'],
+        description: 'Learn to design and program robust embedded systems.',
+        skillsAcquired: ['Microcontrollers', 'C/C++']
+      },
+      {
+        id: 'sl-4',
+        title: 'Civil Engineering',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['Civil', 'Design'],
+        description: 'Modern civil engineering practices and software tools.',
+        skillsAcquired: ['Structural Analysis', 'AutoCAD']
+      },
+      {
+        id: 'sl-5',
+        title: 'Electrical Engineering',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['Electrical', 'Systems'],
+        description: 'Core electrical engineering fundamentals and advanced applications.',
+        skillsAcquired: ['Circuit Design', 'Systems']
+      },
+      {
+        id: 'sl-6',
+        title: 'Computer Science / Software',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['CS', 'Software'],
+        description: 'Foundational and advanced computer science and software engineering.',
+        skillsAcquired: ['Programming', 'Software Dev']
+      },
+      {
+        id: 'sl-7',
+        title: 'Data Analytics & Data Science',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['Data Science', 'Analytics'],
+        description: 'Master data analysis, visualization, and predictive modeling.',
+        skillsAcquired: ['Python', 'SQL', 'Analytics']
+      },
+      {
+        id: 'sl-8',
+        title: 'Aerospace Engineering',
+        duration: '6 Months',
+        format: 'Online/Hybrid',
+        level: 'Skill-lync',
+        partnerId: 'aws',
+        tags: ['Aerospace', 'Engineering'],
+        description: 'Advanced aerospace engineering concepts, aerodynamics, and propulsion.',
+        skillsAcquired: ['Aerodynamics', 'Design']
       }
     ]
   }
