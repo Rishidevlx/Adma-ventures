@@ -74,12 +74,12 @@ export default function Programs() {
             {/* Main Program Header Row */}
             <div className="p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="flex items-start sm:items-center gap-4 text-left">
-                <div className="bg-slate-900 p-4 rounded-none border-2 border-slate-800 shadow-inner shrink-0 flex items-center justify-center min-w-[72px] min-h-[72px]">
+                <div className={`bg-slate-900 p-4 rounded-none border-2 border-slate-800 shadow-inner shrink-0 flex items-center justify-center min-h-[72px] ${getProviderLogo(activeProgram.id) ? 'w-40' : 'w-[72px]'}`}>
                   {getProviderLogo(activeProgram.id) ? (
                     <img 
                       src={getProviderLogo(activeProgram.id)!} 
                       alt={activeProgram.title} 
-                      className="h-10 object-contain"
+                      className="w-full h-full max-h-[40px] object-contain"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         e.currentTarget.nextElementSibling?.classList.remove('hidden');
