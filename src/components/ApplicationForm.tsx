@@ -9,7 +9,7 @@ export default function ApplicationForm() {
     mailId: '',
     currentPlaceOfResidence: '',
     lookingFor: '',
-    upskillCourse: 'US CMA',
+    upskillCourse: '',
     consent: false
   });
 
@@ -270,11 +270,31 @@ export default function ApplicationForm() {
                       onChange={handleInputChange}
                       className="w-full bg-slate-900 border-2 border-slate-800 focus:border-cyan-400 rounded-none py-3 px-4 text-slate-200 text-sm focus:outline-none transition-all font-sans cursor-pointer"
                     >
+                      <option value="" disabled>Select course</option>
                       <option value="US CMA">US CMA</option>
                       <option value="US CPA">US CPA</option>
                       <option value="US EA">US EA</option>
                       <option value="UK ACCA">UK ACCA</option>
                       <option value="GCC School">GCC School</option>
+                      <optgroup label="Crio.do">
+                        <option value="Fellowship Program in Software Development with AI">Fellowship Program in Software Development with AI</option>
+                        <option value="Fellowship Program in QA Automation with AI (SDET)">Fellowship Program in QA Automation with AI (SDET)</option>
+                        <option value="Fellowship Program in NextGen Data Analytics & Data Science with AI">Fellowship Program in NextGen Data Analytics & Data Science with AI</option>
+                        <option value="Fellowship Program in System Design">Fellowship Program in System Design</option>
+                        <option value="SkillIQ Full Stack Development Program">SkillIQ Full Stack Development Program</option>
+                        <option value="SkillIQ Data Analytics & Data Science Program">SkillIQ Data Analytics & Data Science Program</option>
+                        <option value="Crio SkillIQ Gen-AI Powered QA Automation Program">Crio SkillIQ Gen-AI Powered QA Automation Program</option>
+                      </optgroup>
+                      <optgroup label="Skill-lync">
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Electrical / EV Engineering">Electrical / EV Engineering</option>
+                        <option value="Embedded Systems">Embedded Systems</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Computer Science / Software">Computer Science / Software</option>
+                        <option value="Data Analytics & Data Science">Data Analytics & Data Science</option>
+                        <option value="Aerospace Engineering">Aerospace Engineering</option>
+                      </optgroup>
                     </select>
                   </div>
 
