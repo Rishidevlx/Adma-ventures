@@ -124,7 +124,7 @@ export const programs: Program[] = [
   },
   {
     id: 'crio-courses',
-    title: 'Offered by Crio',
+    title: 'OFFERED BY CRIO.DO',
     subtitle: 'Advanced Tech Fellowships',
     description: 'Transformative software development, QA, and data science programs engineered to make you a top-tier tech professional.',
     iconName: 'Cpu',
@@ -211,7 +211,7 @@ export const programs: Program[] = [
   },
   {
     id: 'kcglobed-courses',
-    title: 'Offered by Kcglobed',
+    title: 'OFFERED BY KC GlobED',
     subtitle: 'Finance & Accounting Certifications',
     description: 'Globally recognized credentials in accounting and finance to accelerate your career in top financial organizations.',
     iconName: 'Layers',

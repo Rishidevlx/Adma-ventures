@@ -56,7 +56,9 @@ export default function Programs() {
               <button
                 key={program.id}
                 onClick={() => setSelectedProgramId(program.id)}
-                className={`px-4 py-2 rounded-none text-xs font-mono font-black uppercase tracking-wider transition-colors cursor-pointer border-2 ${
+                className={`px-4 py-2 rounded-none text-xs font-mono font-black tracking-wider transition-colors cursor-pointer border-2 ${
+                  program.id !== 'kcglobed-courses' ? 'uppercase' : ''
+                } ${
                   selectedProgramId === program.id
                     ? 'bg-cyan-400 border-cyan-400 text-slate-950'
                     : 'bg-slate-950 text-slate-400 hover:text-white border-slate-850'
@@ -91,7 +93,7 @@ export default function Programs() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-display font-black text-2xl uppercase text-white tracking-tight">
+                  <h3 className={`font-display font-black text-2xl text-white tracking-tight ${activeProgram.id !== 'kcglobed-courses' ? 'uppercase' : ''}`}>
                     {activeProgram.title}
                   </h3>
                   <p className="text-xs font-mono text-cyan-400 font-extrabold uppercase tracking-widest mt-1">
