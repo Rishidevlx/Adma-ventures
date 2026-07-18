@@ -14,9 +14,9 @@ const partners = [
 export default function PlacementPartners({ variant = 'marquee' }: PlacementPartnersProps) {
   if (variant === 'marquee') {
     return (
-      <div className="bg-slate-950 border-y-2 border-slate-900 py-6 overflow-hidden flex flex-col relative z-10">
+      <div className="bg-white border-y-2 border-slate-900 py-6 overflow-hidden flex flex-col relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-4 text-center">
-          <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tighter text-white">
+          <h3 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tighter text-blue-800">
             Companies of Choice
           </h3>
         </div>
@@ -25,7 +25,7 @@ export default function PlacementPartners({ variant = 'marquee' }: PlacementPart
             {[...partners, ...partners].map((partner, index) => (
               <span 
                 key={index} 
-                className="mx-6 text-xl md:text-2xl font-display font-black text-slate-600 uppercase tracking-tighter hover:text-white transition-colors duration-300"
+                className="mx-6 text-xl md:text-2xl font-display font-black text-slate-600 uppercase tracking-tighter hover:text-slate-900 transition-colors duration-300"
               >
                 {partner}
               </span>
@@ -38,21 +38,21 @@ export default function PlacementPartners({ variant = 'marquee' }: PlacementPart
 
   // List variant
   return (
-    <div className="bg-slate-900 py-16 border-t-2 border-slate-800" id="placement-partners">
+    <div className="bg-gray-50 py-16 border-t-2 border-gray-200" id="placement-partners">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 font-extrabold bg-cyan-400/10 px-3.5 py-1.5 rounded-none border-2 border-cyan-400/30 mb-6 inline-block">
+        <span className="font-mono text-xs uppercase tracking-widest text-blue-700 font-extrabold bg-blue-700/10 px-3.5 py-1.5 rounded-none border-2 border-blue-700/30 mb-6 inline-block">
          Companies of Choice
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white mt-4 mb-10">
+        <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tighter text-blue-800 mt-4 mb-10">
           Our Hiring Network
         </h2>
         <div className="flex flex-wrap justify-center gap-3 md:gap-4">
           {partners.map((partner, index) => (
             <div 
               key={index}
-              className="bg-slate-950 border border-slate-800 px-4 py-2 hover:border-cyan-400 hover:bg-slate-900 transition-all cursor-default shadow-sm"
+              className="bg-white border border-gray-200 rounded-xl px-4 py-2.5 hover:border-blue-400 hover:bg-blue-50 transition-all cursor-default shadow-sm"
             >
-              <span className="font-sans font-bold text-slate-300 text-sm md:text-base tracking-wide uppercase">
+              <span className="font-sans font-bold text-slate-700 text-sm md:text-base tracking-wide uppercase">
                 {partner}
               </span>
             </div>

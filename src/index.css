@@ -21,8 +21,8 @@ html {
 
 /* Brutalist style focus outline and active accents */
 ::selection {
-  background-color: #22d3ee; /* cyan-400 (light turquoise) */
-  color: #0f172a; /* slate-900 */
+  background-color: #1d4ed8; /* blue-700 (royal blue) */
+  color: #ffffff; /* white */
 }
 
 @keyframes marquee {

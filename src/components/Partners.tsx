@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { partners } from '../data';
 import { BookOpen, GraduationCap, Globe, Cloud, Cpu, ExternalLink, ArrowRight } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
-  GraduationCap: <GraduationCap className="h-6 w-6 text-cyan-400 stroke-[2.5]" />,
-  BookOpen: <BookOpen className="h-6 w-6 text-cyan-400 stroke-[2.5]" />,
-  Globe: <Globe className="h-6 w-6 text-cyan-400 stroke-[2.5]" />,
-  Cloud: <Cloud className="h-6 w-6 text-cyan-400 stroke-[2.5]" />,
-  Cpu: <Cpu className="h-6 w-6 text-cyan-400 stroke-[2.5] animate-pulse" />
+  GraduationCap: <GraduationCap className="h-6 w-6 text-blue-700 stroke-[2.5]" />,
+  BookOpen: <BookOpen className="h-6 w-6 text-blue-700 stroke-[2.5]" />,
+  Globe: <Globe className="h-6 w-6 text-blue-700 stroke-[2.5]" />,
+  Cloud: <Cloud className="h-6 w-6 text-blue-700 stroke-[2.5]" />,
+  Cpu: <Cpu className="h-6 w-6 text-blue-700 stroke-[2.5] animate-pulse" />
 };
 
 export default function Partners() {
@@ -16,24 +17,30 @@ export default function Partners() {
   const activePartner = partners.find(p => p.id === selectedPartner) || partners[0];
 
   return (
-    <section className="py-24 bg-slate-950 text-left border-y-2 border-slate-800" id="partners">
+    <section className="py-24 bg-white text-left border-y-2 border-gray-200" id="partners">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <span className="font-mono text-xs uppercase tracking-widest text-cyan-400 bg-cyan-400/10 px-3.5 py-1.5 rounded-none border-2 border-cyan-400/30">
+          <span className="font-mono text-xs uppercase tracking-widest text-blue-700 bg-blue-700/10 px-3.5 py-1.5 rounded-none border-2 border-blue-700/30">
             Our Academic Partners
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl font-black uppercase tracking-tighter text-white mt-6">
+          <h2 className="font-display text-4xl sm:text-5xl font-black uppercase tracking-tighter text-blue-800 mt-6">
             Elite Academic Partners
           </h2>
-          <p className="font-sans text-slate-400 mt-4 font-light leading-relaxed text-base">
+          <p className="font-sans text-slate-600 mt-4 font-light leading-relaxed text-lg">
             ADMA Ventures works hand-in-hand with leading technological universities and cloud providers. All study curricula are certified, accredited, and co-signed by our corporate network.
           </p>
         </div>
 
         {/* Tab-like interactive section */}
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="grid lg:grid-cols-12 gap-8 items-start"
+        >
           
           {/* Partner Selector Tiles - Left (5 Column) */}
           <div className="lg:col-span-5 space-y-3">
@@ -49,24 +56,24 @@ export default function Partners() {
                     onClick={() => setSelectedPartner(partner.id)}
                     className={`flex items-center justify-between p-4 rounded-none text-left border-2 transition-all cursor-pointer ${
                       isSelected
-                        ? 'bg-slate-900 border-cyan-400 shadow-lg translate-x-1'
-                        : 'bg-slate-950 border-slate-850 hover:border-slate-700 hover:bg-slate-900/60'
+                        ? 'bg-gray-50 border-blue-700 shadow-lg translate-x-1'
+                        : 'bg-white border-slate-850 hover:border-gray-300 hover:bg-gray-50/60'
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`p-2 rounded-none ${isSelected ? 'bg-cyan-400/15' : 'bg-slate-900'}`}>
-                        {iconMap[partner.logoIcon] || <GraduationCap className="h-6 w-6 text-cyan-400" />}
+                      <div className={`p-2 rounded-none ${isSelected ? 'bg-blue-700/15' : 'bg-gray-50'}`}>
+                        {iconMap[partner.logoIcon] || <GraduationCap className="h-6 w-6 text-blue-700" />}
                       </div>
                       <div>
-                        <h3 className="font-display font-black uppercase text-slate-100 text-sm tracking-tight">
+                        <h3 className="font-display font-black uppercase text-blue-800 text-sm tracking-tight">
                           {partner.name}
                         </h3>
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-bold bg-cyan-400/10 px-2 py-0.5 rounded-none mt-1 inline-block">
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-blue-700 font-bold bg-blue-700/10 px-2 py-0.5 rounded-none mt-1 inline-block">
                           {partner.type}
                         </span>
                       </div>
                     </div>
-                    <ArrowRight className={`h-4 w-4 text-slate-500 transition-transform ${isSelected ? 'translate-x-1 text-cyan-400' : ''}`} />
+                    <ArrowRight className={`h-4 w-4 text-slate-500 transition-transform ${isSelected ? 'translate-x-1 text-blue-700' : ''}`} />
                   </button>
                 );
               })}
@@ -74,19 +81,19 @@ export default function Partners() {
           </div>
 
           {/* Partner Dynamic Explainer Panel - Right (7 Column) */}
-          <div className="lg:col-span-7 bg-slate-900 border-2 border-slate-800 rounded-none p-6 sm:p-8 relative overflow-hidden transition-all duration-300">
+          <div className="lg:col-span-7 bg-gray-50 border-2 border-gray-200 rounded-none p-6 sm:p-8 relative overflow-hidden transition-all duration-300">
             {/* Ambient accent light */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-400/5 rounded-bl-none pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-700/5 rounded-bl-none pointer-events-none"></div>
 
             <div className="flex flex-col space-y-6">
               
               {/* Top Banner info */}
               <div className="flex items-start justify-between">
                 <div>
-                  <div className="inline-block text-[10px] font-mono font-black uppercase tracking-widest text-cyan-400 bg-cyan-400/15 border-2 border-cyan-400/20 px-2.5 py-1 rounded-none mb-3">
+                  <div className="inline-block text-[10px] font-mono font-black uppercase tracking-widest text-blue-700 bg-blue-700/15 border-2 border-blue-700/20 px-2.5 py-1 rounded-none mb-3">
                     {activePartner.type} Collaboration Model
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-blue-800">
                     {activePartner.name}
                   </h3>
                   <p className="text-xs font-mono text-slate-455 mt-1 uppercase tracking-widest">
@@ -94,20 +101,20 @@ export default function Partners() {
                   </p>
                 </div>
                 
-                <div className="bg-slate-950 border-2 border-slate-800 p-4 rounded-none font-display font-black text-2xl text-cyan-400 tracking-wider">
+                <div className="bg-white border-2 border-gray-200 p-4 rounded-none font-display font-black text-2xl text-blue-700 tracking-wider">
                   {activePartner.logoText}
                 </div>
               </div>
 
               {/* Partnership specific custom stats */}
-              <div className="grid grid-cols-2 gap-4 bg-slate-950 p-4 rounded-none border-2 border-slate-850">
+              <div className="grid grid-cols-2 gap-4 bg-white p-4 rounded-none border-2 border-slate-850">
                 <div>
                   <p className="text-[10px] font-mono uppercase text-slate-500 font-bold">Cooperative Action</p>
-                  <p className="text-sm font-black uppercase tracking-tight text-slate-100 mt-1">Dual-Signoff Credentials</p>
+                  <p className="text-sm font-black uppercase tracking-tight text-slate-900 mt-1">Dual-Signoff Credentials</p>
                 </div>
                 <div>
                   <p className="text-[10px] font-mono uppercase text-slate-500 font-bold">Sandbox Labs</p>
-                  <p className="text-sm font-black uppercase tracking-tight text-slate-100 mt-1">Direct Guided API Sandbox</p>
+                  <p className="text-sm font-black uppercase tracking-tight text-slate-900 mt-1">Direct Guided API Sandbox</p>
                 </div>
               </div>
 
@@ -116,7 +123,7 @@ export default function Partners() {
                 <h4 className="font-mono text-xs uppercase tracking-widening text-slate-455 font-black">
                   Institutional Mandate
                 </h4>
-                <p className="font-sans text-slate-300 text-sm leading-relaxed font-light">
+                <p className="font-sans text-slate-700 text-sm leading-relaxed font-light">
                   {activePartner.description} Our training integrates their sandbox toolkits, theoretical testing blocks, and verified examination papers, meaning candidates achieve both the systemic foresight defined by ADMA Ventures and authentic technical proficiency.
                 </p>
               </div>
@@ -124,15 +131,15 @@ export default function Partners() {
               {/* Call out */}
               <div className="pt-6 border-t-2 border-slate-850 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 bg-cyan-400"></span>
-                  <span className="text-xs font-mono text-slate-300">Curriculae Updated for 2026 Academic Slates</span>
+                  <span className="h-2.5 w-2.5 bg-blue-700"></span>
+                  <span className="text-xs font-mono text-slate-700">Curriculae Updated for 2026 Academic Slates</span>
                 </div>
                 <button 
                   onClick={() => {
                     const el = document.getElementById('apply');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="inline-flex items-center gap-1.5 text-xs font-display uppercase tracking-widest font-black text-cyan-400 hover:text-cyan-300 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-xs font-display uppercase tracking-widest font-black text-blue-700 hover:text-blue-600 transition-all cursor-pointer"
                 >
                   Inquire Academic Pathway <ExternalLink className="h-3.5 w-3.5" />
                 </button>
@@ -140,14 +147,13 @@ export default function Partners() {
 
             </div>
           </div>
-
-        </div>
+        </motion.div>
 
         {/* Corporate Partnership Banner */}
-        <div className="mt-16 bg-slate-900 border-2 border-slate-800 rounded-none p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-16 bg-gray-50 border-2 border-gray-200 rounded-none p-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-left">
-            <h4 className="font-display font-black uppercase text-white tracking-tight text-lg">Corporate Sponsor & Employer Network</h4>
-            <p className="text-sm text-slate-400 mt-1 max-w-2xl font-light">
+            <h4 className="font-display font-black uppercase text-blue-800 tracking-tight text-xl">Corporate Sponsor & Employer Network</h4>
+            <p className="text-base text-slate-600 mt-1 max-w-2xl font-light">
               We collaborate with regional tech groups and VC portfolio firms. Your enterprise partners review upskilled developers and project managers for direct employment contracts.
             </p>
           </div>
@@ -156,7 +162,7 @@ export default function Partners() {
               const el = document.getElementById('apply');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="whitespace-nowrap px-6 py-3.5 bg-cyan-400 hover:bg-cyan-300 text-slate-900 rounded-none text-xs font-mono font-black uppercase tracking-wider transition-colors shrink-0 cursor-pointer"
+            className="whitespace-nowrap px-6 py-3.5 bg-blue-700 hover:bg-blue-600 text-white rounded-none text-xs font-mono font-black uppercase tracking-wider transition-colors shrink-0 cursor-pointer"
           >
             Become Hiring Partner
           </button>

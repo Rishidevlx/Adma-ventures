@@ -436,7 +436,7 @@ export const testimonials: Testimonial[] = [
     company: 'Veloce Logistics Solutions',
     story: 'After 6 years working in conventional logistics management, I noticed a huge tech shift. The Cloud Defenses & Systems curriculum co-designed with AWS gave me the exact code foundations. Supported by ADMA advisers, I landed my developer role and now direct our intelligent fleet forecasting.',
     programTitle: 'Cloud Defenses & Full-Stack Systems',
-    avatarBg: 'bg-cyan-500',
+    avatarBg: 'bg-blue-800',
     prevRole: 'Logistics Supervisor'
   },
   {
