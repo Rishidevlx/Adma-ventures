@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, GraduationCap } from 'lucide-react';
 
 export default function Header() {
@@ -29,7 +30,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-[72px]">
 
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group shrink-0" id="brand-logo">
+          <Link to="/" className="flex items-center gap-3 group shrink-0" id="brand-logo">
             <div className="bg-blue-700 p-2 rounded-lg text-white shadow-md group-hover:bg-blue-600 transition-colors">
               <GraduationCap className="h-5 w-5 stroke-[2.5]" />
             </div>
@@ -41,30 +42,27 @@ export default function Header() {
                 Academy & Upskilling
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-10" id="desktop-nav">
-            <a href="#partners" className={navLinkClass}>
+            <a href="/#partners" className={navLinkClass}>
               Academic Partners
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
             </a>
-            <a href="#programs" className={navLinkClass}>
+            <a href="/#programs" className={navLinkClass}>
               Learning Tracks
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
             </a>
-            <a href="#quiz" className={navLinkClass + ' flex items-center gap-1.5'}>
-              Career Matcher
-              <span className="bg-blue-700 text-white text-[9px] px-1.5 py-0.5 rounded font-mono font-black uppercase">
-                AI
-              </span>
+            <Link to="/blog" className={navLinkClass}>
+              Blog
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
-            </a>
-            <a href="#testimonials" className={navLinkClass}>
+            </Link>
+            <a href="/#testimonials" className={navLinkClass}>
               Stories
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
             </a>
-            <a href="#faq" className={navLinkClass}>
+            <a href="/#faq" className={navLinkClass}>
               FAQ
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
             </a>
@@ -107,20 +105,31 @@ export default function Header() {
         <div className="md:hidden bg-white border-b border-gray-200 shadow-lg animate-in fade-in slide-in-from-top duration-200">
           <div className="px-4 py-4 space-y-1">
             {[
-              { href: '#partners', label: 'Academic Partners' },
-              { href: '#programs', label: 'Learning Tracks' },
-              { href: '#quiz', label: 'Career Matcher' },
-              { href: '#testimonials', label: 'Stories' },
-              { href: '#faq', label: 'FAQ' },
-            ].map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-              >
-                {label}
-              </a>
+              { href: '/#partners', label: 'Academic Partners', isRoute: false },
+              { href: '/#programs', label: 'Learning Tracks', isRoute: false },
+              { href: '/blog', label: 'Blog', isRoute: true },
+              { href: '/#testimonials', label: 'Stories', isRoute: false },
+              { href: '/#faq', label: 'FAQ', isRoute: false },
+            ].map(({ href, label, isRoute }) => (
+              isRoute ? (
+                <Link
+                  key={href}
+                  to={href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                >
+                  {label}
+                </Link>
+              ) : (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                >
+                  {label}
+                </a>
+              )
             ))}
             <div className="pt-3 border-t border-gray-100 flex flex-col gap-2 mt-3">
               <a
