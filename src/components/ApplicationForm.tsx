@@ -35,7 +35,7 @@ export default function ApplicationForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.mailId || !formData.contactNo) {
       setErrorMessage('Please output your core contact specifications (Name, Mail id, Contact no.).');
@@ -44,16 +44,32 @@ export default function ApplicationForm() {
 
     setIsLoading(true);
 
-    // Simulate database queue submission
-    setTimeout(() => {
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      const response = await fetch(`${apiUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
       // Create a random high-fidelity application ID
       const randHex = Math.random().toString(16).substring(2, 7).toUpperCase();
       const code = `ADM-APP-2026-${randHex}`;
       
       setApplicationId(code);
-      setIsLoading(false);
       setIsSubmitted(true);
-    }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrorMessage('Communication error with secure server. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -151,7 +167,7 @@ export default function ApplicationForm() {
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Your Name"
-                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-200 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
+                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
                         />
                       </div>
                     </div>
@@ -171,7 +187,7 @@ export default function ApplicationForm() {
                           value={formData.contactNo}
                           onChange={handleInputChange}
                           placeholder="Your Contact No."
-                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-200 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
+                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
                         />
                       </div>
                     </div>
@@ -193,7 +209,7 @@ export default function ApplicationForm() {
                           value={formData.mailId}
                           onChange={handleInputChange}
                           placeholder="Your Mail id"
-                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-200 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
+                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
                         />
                       </div>
                     </div>
@@ -212,7 +228,7 @@ export default function ApplicationForm() {
                           value={formData.currentPlaceOfResidence}
                           onChange={handleInputChange}
                           placeholder="City, Country"
-                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-200 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
+                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
                         />
                       </div>
                     </div>
@@ -233,7 +249,7 @@ export default function ApplicationForm() {
                           value={formData.educationalQualification}
                           onChange={handleInputChange}
                           placeholder="E.g. B.Tech, MBA"
-                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-200 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
+                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
                         />
                       </div>
                     </div>
@@ -252,7 +268,7 @@ export default function ApplicationForm() {
                           value={formData.lookingFor}
                           onChange={handleInputChange}
                           placeholder="E.g. Career switch, Skill upgrade"
-                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-200 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
+                          className="w-full bg-gray-50 border-2 border-gray-200 hover:border-gray-300 focus:border-blue-700 rounded-none py-3 pl-11 pr-4 text-slate-900 text-sm focus:outline-none transition-all placeholder:text-slate-600 font-sans"
                         />
                       </div>
                     </div>
@@ -268,7 +284,7 @@ export default function ApplicationForm() {
                       name="upskillCourse"
                       value={formData.upskillCourse}
                       onChange={handleInputChange}
-                      className="w-full bg-gray-50 border-2 border-gray-200 focus:border-blue-700 rounded-none py-3 px-4 text-slate-200 text-sm focus:outline-none transition-all font-sans cursor-pointer"
+                      className="w-full bg-gray-50 border-2 border-gray-200 focus:border-blue-700 rounded-none py-3 px-4 text-slate-900 text-sm focus:outline-none transition-all font-sans cursor-pointer"
                     >
                       <option value="" disabled>Select course</option>
                       <option value="US CMA">US CMA</option>
@@ -357,7 +373,7 @@ export default function ApplicationForm() {
                       <div className="grid grid-cols-2 gap-2 pt-1">
                         <div>
                           <span className="text-slate-500 text-[10px] uppercase font-black block">Contact No</span>
-                          <span className="text-slate-200 mt-0.5 inline-block font-bold">{formData.contactNo}</span>
+                          <span className="text-slate-900 mt-0.5 inline-block font-bold">{formData.contactNo}</span>
                         </div>
                         <div>
                           <span className="text-slate-500 text-[10px] uppercase font-black block">Residence</span>

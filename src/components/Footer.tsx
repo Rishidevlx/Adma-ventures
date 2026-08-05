@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Award, Heart, Shield, GraduationCap, Clock, Globe } from 'lucide-react';
+import { Award, Heart, Shield, GraduationCap, Clock, Globe, Mail } from 'lucide-react';
 
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState<string>('');
@@ -36,6 +36,11 @@ export default function Footer() {
             <p className="text-xs text-slate-600 leading-relaxed max-w-sm font-light">
               ADMA Ventures is an integrated capital, advisory, and corporate education enterprise. We partner with vetted global institutions to deliver accelerated, co-branded cohort training for ambitious developers and product managers.
             </p>
+
+            <div className="pt-2 pb-1 flex items-center gap-2 text-xs font-mono font-bold text-blue-700">
+              <Mail className="h-4 w-4 stroke-[2.5]" />
+              <a href="mailto:enquiry@admaventures.in" className="hover:underline underline-offset-4">enquiry@admaventures.in</a>
+            </div>
 
             {/* Dynamic Status/Time Bar */}
             <div className="pt-2">
