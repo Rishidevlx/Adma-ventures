@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Award, Heart, Shield, GraduationCap, Clock, Globe, Mail } from 'lucide-react';
+import { Award, Heart, Shield, GraduationCap, Clock, Globe, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState<string>('');
@@ -37,9 +37,17 @@ export default function Footer() {
               ADMA Ventures is an integrated capital, advisory, and corporate education enterprise. We partner with vetted global institutions to deliver accelerated, co-branded cohort training for ambitious developers and product managers.
             </p>
 
-            <div className="pt-2 pb-1 flex items-center gap-2 text-xs font-mono font-bold text-blue-700">
-              <Mail className="h-4 w-4 stroke-[2.5]" />
-              <a href="mailto:enquiry@admaventures.in" className="hover:underline underline-offset-4">enquiry@admaventures.in</a>
+            <div className="pt-2 pb-1 flex flex-col gap-2 text-xs font-mono font-bold text-blue-700">
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 stroke-[2.5]" />
+                <a href="mailto:enquiry@admaventures.in" className="hover:underline underline-offset-4">enquiry@admaventures.in</a>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 stroke-[2.5] shrink-0 mt-0.5" />
+                <span className="text-slate-600 font-sans font-medium leading-relaxed max-w-xs">
+                  ADMA ventures, No;1638/3, 2nd floor, Avinashi Road, Hope college, Peelamedu, Coimbatore-641004, Tamilnadu, India
+                </span>
+              </div>
             </div>
 
             {/* Dynamic Status/Time Bar */}
