@@ -7,28 +7,40 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
+import Events from './pages/Events';
+import AdminLogin from './pages/AdminLogin';
+import AdminLayout from './layouts/AdminLayout';
+import EventsList from './pages/admin/EventsList';
+import AddEvent from './pages/admin/AddEvent';
+import { useLocation } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
-export default function App() {
+function AppContent() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
   return (
-    <HelmetProvider>
-      <Router>
-        <div className="bg-white min-h-screen text-slate-900 font-sans selection:bg-blue-700 selection:text-white flex flex-col">
-        {/* Top Floating Header */}
-        <Header />
+    <div className="bg-white min-h-screen text-slate-900 font-sans selection:bg-blue-700 selection:text-white flex flex-col">
+      {!isAdminRoute && <Header />}
 
-        {/* Main Content Area */}
-        <div className="flex-grow pt-24">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<BlogList />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-          </Routes>
-        </div>
+      <div className={isAdminRoute ? "flex-grow" : "flex-grow pt-24"}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="events" element={<EventsList />} />
+            <Route path="events/add" element={<AddEvent />} />
+            <Route path="events/edit/:id" element={<AddEvent />} />
+          </Route>
+        </Routes>
+      </div>
 
-        {/* Corporate trust and legal Dynamic Footer */}
-        <Footer />
+      {!isAdminRoute && <Footer />}
 
-        {/* Floating Call Button */}
+      {!isAdminRoute && (
         <a 
           href="tel:+918754659759" 
           className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-blue-700 text-white p-4 rounded-full shadow-lg shadow-blue-700/30 hover:scale-110 hover:bg-blue-600 hover:shadow-blue-700/50 transition-all duration-300 z-50 flex items-center justify-center group"
@@ -41,8 +53,18 @@ export default function App() {
             +91 87546 59759
           </span>
         </a>
-      </div>
-    </Router>
+      )}
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <HelmetProvider>
+      <Toaster position="top-right" />
+      <Router>
+        <AppContent />
+      </Router>
     </HelmetProvider>
   );
 }

@@ -58,6 +58,10 @@ export default function Header() {
               Blog
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
             </Link>
+            <Link to="/events" className={navLinkClass}>
+              Events
+              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
+            </Link>
             <a href="/#testimonials" className={navLinkClass}>
               Stories
               <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blue-700 rounded-full group-hover:w-full transition-all duration-300" />
@@ -108,6 +112,7 @@ export default function Header() {
               { href: '/#partners', label: 'Academic Partners', isRoute: false },
               { href: '/#programs', label: 'Learning Tracks', isRoute: false },
               { href: '/blog', label: 'Blog', isRoute: true },
+              { href: '/events', label: 'Events', isRoute: true },
               { href: '/#testimonials', label: 'Stories', isRoute: false },
               { href: '/#faq', label: 'FAQ', isRoute: false },
             ].map(({ href, label, isRoute }) => (
