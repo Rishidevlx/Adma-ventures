@@ -8,10 +8,12 @@ import Home from './pages/Home';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
 import Events from './pages/Events';
+import EventDetails from './pages/EventDetails';
 import AdminLogin from './pages/AdminLogin';
 import AdminLayout from './layouts/AdminLayout';
 import EventsList from './pages/admin/EventsList';
 import AddEvent from './pages/admin/AddEvent';
+import AdminCategories from './pages/admin/AdminCategories';
 import { useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
@@ -29,11 +31,13 @@ function AppContent() {
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/events/:slug" element={<EventDetails />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="events" element={<EventsList />} />
             <Route path="events/add" element={<AddEvent />} />
             <Route path="events/edit/:id" element={<AddEvent />} />
+            <Route path="events/categories" element={<AdminCategories />} />
           </Route>
         </Routes>
       </div>

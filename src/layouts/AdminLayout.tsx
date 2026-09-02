@@ -8,7 +8,9 @@ import {
   User, 
   ChevronDown, 
   PlusCircle, 
-  List
+  List,
+  FileEdit,
+  GraduationCap
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -33,10 +35,19 @@ export default function AdminLayout() {
         className="h-full bg-[#1e293b] text-slate-300 flex flex-col z-20 shadow-xl transition-all duration-300 relative"
       >
         {/* Logo Area */}
-        <div className="h-16 flex items-center justify-center border-b border-slate-700/50 bg-[#0f172a]/30">
-          <h1 className={`font-bold text-white transition-all ${sidebarOpen ? 'text-xl' : 'text-sm'}`}>
-            {sidebarOpen ? 'Adma Admin' : 'AA'}
-          </h1>
+        <div className="h-16 flex items-center justify-center border-b border-slate-700/50 bg-[#0f172a]/30 px-4">
+          <div className="flex items-center gap-3 overflow-hidden">
+            <div className="bg-blue-600 p-1.5 rounded-lg text-white shadow-md shrink-0">
+              <GraduationCap className="h-5 w-5 stroke-[2.5]" />
+            </div>
+            {sidebarOpen && (
+              <div className="flex flex-col leading-none whitespace-nowrap">
+                <span className="font-display font-black text-lg tracking-tight text-white">
+                  ADMA <span className="text-blue-500">VENTURES</span>
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Menu Items */}
@@ -69,10 +80,17 @@ export default function AdminLayout() {
                   >
                     <Link 
                       to="/admin/events" 
-                      className={`flex items-center space-x-2 py-2 px-3 rounded-md text-sm transition-colors ${location.pathname === '/admin/events' ? 'text-white bg-slate-800' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'}`}
+                      className={`flex items-center space-x-2 py-2 px-3 rounded-md text-sm transition-colors ${location.pathname === '/admin/events' && !location.search ? 'text-white bg-slate-800' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'}`}
                     >
                       <List size={16} />
                       <span>All events</span>
+                    </Link>
+                    <Link 
+                      to="/admin/events?status=draft" 
+                      className={`flex items-center space-x-2 py-2 px-3 rounded-md text-sm transition-colors ${location.search.includes('status=draft') ? 'text-white bg-slate-800' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'}`}
+                    >
+                      <FileEdit size={16} />
+                      <span>Drafts</span>
                     </Link>
                     <Link 
                       to="/admin/events/add" 
@@ -80,6 +98,13 @@ export default function AdminLayout() {
                     >
                       <PlusCircle size={16} />
                       <span>Add post</span>
+                    </Link>
+                    <Link 
+                      to="/admin/events/categories" 
+                      className={`flex items-center space-x-2 py-2 px-3 rounded-md text-sm transition-colors ${location.pathname === '/admin/events/categories' ? 'text-white bg-slate-800' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'}`}
+                    >
+                      <List size={16} />
+                      <span>Categories</span>
                     </Link>
                   </motion.div>
                 )}

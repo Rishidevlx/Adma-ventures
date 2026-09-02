@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight, MapPin, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,12 @@ interface Event {
   title: string;
   slug: string;
   banner_url: string;
-  content: string;
+  event_date: string;
+  event_time: string;
+  event_venue: string;
+  registration_link: string;
+  category_name?: string;
+  speaker_name?: string;
   created_at: string;
 }
 
@@ -35,11 +40,8 @@ export default function Events() {
     }
   };
 
-  // Helper to append cloudinary transformations for fast loading
-  // f_auto,q_auto = auto format and auto quality
-  // c_fill,w_800,h_500 = crop/fill to size to prevent massive downloads
   const getOptimizedImage = (url: string) => {
-    if (!url.includes('cloudinary.com')) return url;
+    if (!url?.includes('cloudinary.com')) return url;
     return url.replace('/upload/', '/upload/f_auto,q_auto,c_fill,w_800,h_500/');
   };
 
@@ -83,30 +85,63 @@ export default function Events() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 overflow-hidden group flex flex-col"
+                className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100 overflow-hidden group flex flex-col"
               >
-                {/* Image Container with object-contain to preserve original ratio inside the box, 
-                    but object-cover is usually better for grids. The user requested object-fit content (contain). */}
-                <div className="h-56 bg-slate-100 overflow-hidden relative">
+                <Link to={`/events/${encodeURIComponent(event.slug)}`} className="block relative h-56 bg-slate-100 overflow-hidden">
                   <img 
                     src={getOptimizedImage(event.banner_url)} 
                     alt={event.title} 
-                    className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-blue-600 shadow-sm">
-                    {new Date(event.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                  </div>
-                </div>
+                  {event.event_date && (
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-semibold text-blue-600 shadow-sm border border-white/20">
+                      {new Date(event.event_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    </div>
+                  )}
+                </Link>
 
-                <div className="p-6 flex flex-col flex-1 min-w-0 w-full">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                    {event.title}
-                  </h3>
-                  {/* Rich text content */}
-                  <div 
-                    className="prose prose-sm prose-slate max-w-none min-w-0 w-full break-words"
-                    dangerouslySetInnerHTML={{ __html: event.content.replace(/&nbsp;/g, ' ') }} 
-                  />
+                <div className="p-6 flex flex-col flex-1">
+                  {event.category_name && (
+                    <div className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">
+                      {event.category_name}
+                    </div>
+                  )}
+                  <Link to={`/events/${encodeURIComponent(event.slug)}`}>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                      {event.title}
+                    </h3>
+                  </Link>
+                  
+                  <div className="space-y-2.5 mb-6">
+                    {event.event_time && (
+                      <div className="flex items-start text-sm text-slate-600 space-x-3">
+                         <Clock className="w-4 h-4 mt-0.5 text-slate-400 shrink-0" />
+                         <span>{event.event_time}</span>
+                      </div>
+                    )}
+                    {event.event_venue && (
+                      <div className="flex items-start text-sm text-slate-600 space-x-3">
+                         <MapPin className="w-4 h-4 mt-0.5 text-slate-400 shrink-0" />
+                         <span className="line-clamp-2">{event.event_venue}</span>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between">
+                     <Link to={`/events/${encodeURIComponent(event.slug)}`} className="text-blue-600 font-medium text-sm flex items-center space-x-1 hover:text-blue-700 transition-colors">
+                        <span>View Details</span> <ArrowRight size={16} />
+                     </Link>
+                     {event.registration_link && (
+                        <a 
+                          href={event.registration_link} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm"
+                        >
+                          Register
+                        </a>
+                     )}
+                  </div>
                 </div>
               </motion.div>
             ))}
