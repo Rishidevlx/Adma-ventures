@@ -45,7 +45,7 @@ export default function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 stroke-[2.5] shrink-0 mt-0.5" />
                 <span className="text-slate-600 font-sans font-medium leading-relaxed max-w-xs">
-                  ADMA ventures, No;1638/3, 2nd floor, Avinashi Road, Hope college, Peelamedu, Coimbatore-641004, Tamilnadu, India
+                 “Renaissance Terrace”, Flat Old No. 126 F, New No. 176/14, Second Floor, T.S. Road, Opp to CSI Bishop Appasamy College, Race Course, Coimbatore – 641 018.
                 </span>
               </div>
             </div>
